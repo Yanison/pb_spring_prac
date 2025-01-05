@@ -42,7 +42,7 @@ public class AuthController {
     @PostMapping("/signUp")
     public String signUpRequest(SignUpRequest signUpRequest) {
         try {
-            int ret = customUserDetailService.insertUser(signUpRequest.toEntity());
+            int ret = authService.insertUser(signUpRequest.toEntity());
             return ret > 0 ? "redirect:/login" : "redirect:/signUp";
         }catch (UserDuplicationException e){
             return "redirect:/signUp#failed_dupplicated";

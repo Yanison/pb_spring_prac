@@ -1,11 +1,13 @@
 package com.pb.starter.component.config;
 
-import com.pb.starter.component.filter.JwtAuthenticationFilter;
 import com.pb.starter.component.TokenProvider;
+import com.pb.starter.component.filter.JwtAuthenticationFilter;
 import com.pb.starter.component.filter.JwtExceptionFilter;
 import com.pb.starter.component.handler.JwtAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -14,12 +16,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.stereotype.Component;
 
 import static com.pb.starter.model.constant.SecurityEnum.SecurityFreeURL.PERMIT_ALL_URL;
 
-@Component
+@Configuration
 @RequiredArgsConstructor
+@EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfig {
 
     private final String[] allowedUrls = {"/swagger-ui/**", "/v3/**", "/api/hrInformationManagement/login"};
@@ -40,6 +42,10 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)// CSRF 보호 비활성화
                 .formLogin(AbstractHttpConfigurer::disable)// Form 로그인 비활성화
                 .httpBasic(AbstractHttpConfigurer::disable)// http basic 인증 방식 비활성화
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("Authorization")) //로그아웃 설정
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))// X-Frame-Options, iframe 사용범위 설정: 클릭재킹 공격 방어
                 //허용 경로 작업
                 .authorizeHttpRequests(request ->

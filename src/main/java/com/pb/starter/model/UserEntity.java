@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.apache.ibatis.annotations.ConstructorArgs;
 
 @Data
-@Builder
 public class UserEntity {
     private Long id;
     private String email;

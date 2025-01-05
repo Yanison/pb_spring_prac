@@ -167,10 +167,10 @@
                     url: "/api/v1/auth/login",
                     data: JSON.stringify(data),
                     contentType: "application/json",
-                    success: function(data){
-                        setAuthorizationCookie(data);
-                        console.log("cookie ," + document.cookie);
-                        alert("cookie ," + document.cookie);
+                    success: async function(data){
+                        alert(data)
+                        // await setAuthorizationCookie(data);
+                        // alert("cookie ," + document.cookie);
                         location.href = "/subject/main";
                     },
                     error: function(err){
@@ -186,8 +186,8 @@
             const date = new Date();
             date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // 7일 후 시간 계산
 
-            // 쿠키 설정
-            document.cookie = `Authorization=Bearer ${token}; expires=${date.toUTCString()};`;
+            // 쿠키 설정 (Secure 속성 생략)
+            document.cookie = `Authorization=Bearer ${token}; expires=${date.toUTCString()}; path=/;`;
         }
     </script>
 </body>

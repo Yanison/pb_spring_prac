@@ -1,7 +1,9 @@
 package com.pb.starter.component;
 
+import com.pb.starter.auth.CustomUserDetailService;
 import io.jsonwebtoken.*;
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -23,10 +24,10 @@ import java.util.Date;
 public class TokenProvider {
     @Value("${jwt.secret}")
     private String jwtSecret;
-    @Value("${jwt.expiration}")
+    @Value("${jwt.expiration}") // 1시간
     private long tokenValidTime;
     private Key secretKey;
-    private final UserDetailsService userDetailsService;
+    private final CustomUserDetailService customUserDetailService;
     @PostConstruct
     public void init(){
         secretKey = new SecretKeySpec(jwtSecret.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS256.getJcaName());
@@ -47,9 +48,10 @@ public class TokenProvider {
 
     // 인증 정보 조회
     public Authentication getAuthentication(String token) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserPk(token));
+        UserDetails userDetails = customUserDetailService.loadUserByUsername(this.getUserPk(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
+
 
     // 토큰에서 회원 정보 추출
     public String getUserPk(String token) {
@@ -78,6 +80,14 @@ public class TokenProvider {
 
     // Request의 Header에서 token 값 가져오기
     public String resolveToken(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("Authorization".equals(cookie.getName())) {
+                    return cookie.getValue().trim();
+                }
+            }
+        }
         String bearerToken = request.getHeader("Authorization");
         if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7).trim();
