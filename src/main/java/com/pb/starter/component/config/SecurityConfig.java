@@ -17,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static com.pb.starter.model.constant.SecurityEnum.SecurityFreeURL.PERMIT_ALL_URL;
+import static com.pb.starter.model.constant.SecurityConstant.SecurityFreeURL.PERMIT_ALL_URL;
 
 @Configuration
 @RequiredArgsConstructor

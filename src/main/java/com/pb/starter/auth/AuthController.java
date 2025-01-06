@@ -16,8 +16,11 @@ import java.util.Optional;
 public class AuthController {
 
     private final AuthService authService;
-    private final CustomUserDetailService customUserDetailService;
 
+    @GetMapping("/login/form")
+    public String formLogin() {
+        return "/login/authentication-form-login1";
+    }
     @GetMapping("/login")
     public String login() {
         return "/login/authentication-login1";
@@ -34,7 +37,7 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/signUp")
+    @GetMapping("/signUp/form")
     public String signUp() {
         return "/login/authentication-register1";
     }

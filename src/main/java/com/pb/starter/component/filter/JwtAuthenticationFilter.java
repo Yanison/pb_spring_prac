@@ -21,7 +21,7 @@ import org.springframework.web.filter.GenericFilterBean;
 import java.io.IOException;
 
 import static com.pb.starter.component.util.CommonUtil.isStartWith;
-import static com.pb.starter.model.constant.SecurityEnum.SecurityFreeURL.FILTER_FREE_URL;
+import static com.pb.starter.model.constant.SecurityConstant.SecurityFreeURL.FILTER_FREE_URL;
 
 @Component
 @RequiredArgsConstructor

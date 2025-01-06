@@ -2,16 +2,16 @@ package com.pb.starter.model.constant;
 
 import lombok.Getter;
 
-public class SecurityEnum {
-    public enum Role {
-        ROLE_USER, ROLE_ADMIN
-    }
+public class SecurityConstant {
+    public static final String ROLE_USER = "ROLE_USER";
+    public static final String ROLE_ADMIN = "ROLE_ADMIN";
 
     @Getter
     public enum SecurityFreeURL {
         LOGIN_API("/api/v1/auth/login"),
         SIGNUP("/signUp"),
         LOGIN("/login"),
+        LOGIN_FORM("/login/form"),
         ASSETS("/assets/**"),
         DIST("/dist/**"),
         FAVICON("/favicon.ico"),

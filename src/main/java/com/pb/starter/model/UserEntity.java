@@ -2,8 +2,6 @@ package com.pb.starter.model;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.apache.ibatis.annotations.ConstructorArgs;
 
 @Data
 public class UserEntity {
@@ -27,8 +25,5 @@ public class UserEntity {
         this.age = age;
         this.tel = tel;
         this.grantedAuth = grantedAuth;
-    }
-
-    public UserEntity() {
     }
 }

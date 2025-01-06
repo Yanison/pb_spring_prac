@@ -1,20 +1,12 @@
 package com.pb.starter;
 
 import com.pb.starter.auth.AuthService;
-import com.pb.starter.model.UserEntity;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.javassist.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import static com.pb.starter.model.constant.Constant.GENDER_M;
 
 @SpringBootTest
 class StarterApplicationTests {
