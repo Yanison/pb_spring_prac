@@ -18,7 +18,7 @@ server:
 
 jwt:
   secret: Exxmr6Bh7wASQRtdyZjjTM7Vo7cFbfpbEuWXsLnyp50=
-  expiration: 86400000
+
 
 mybatis:
   configuration:

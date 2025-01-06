@@ -2,6 +2,7 @@ package com.pb.starter.auth;
 
 import com.pb.starter.component.exception.UserDuplicationException;
 import com.pb.starter.model.UserEntity;
+import com.pb.starter.model.api.LoginRequest;
 import com.pb.starter.model.api.SignUpRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -27,17 +28,17 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String loginRequest(UserEntity loginRequest, HttpSession session) throws Exception {
-        Optional<UserEntity> ue = authService.findUserByEmailAndPassword(loginRequest);
+    public String loginRequest(LoginRequest loginRequest, HttpSession session){
+        Optional<UserEntity> ue = authService.findUserByEmailAndPassword(loginRequest.toEntity());
         if (ue.isPresent()) {
             session.setAttribute("user", ue.get());
-            return "redirect:/subject";
+            return "redirect:/subject/main";
         }else{
             return "redirect:/login#failed";
         }
     }
 
-    @GetMapping("/signUp/form")
+    @GetMapping("/signUp")
     public String signUp() {
         return "/login/authentication-register1";
     }
@@ -46,7 +47,7 @@ public class AuthController {
     public String signUpRequest(SignUpRequest signUpRequest) {
         try {
             int ret = authService.insertUser(signUpRequest.toEntity());
-            return ret > 0 ? "redirect:/login" : "redirect:/signUp";
+            return ret > 0 ? "redirect:/login/form" : "redirect:/signUp";
         }catch (UserDuplicationException e){
             return "redirect:/signUp#failed_dupplicated";
         }
