@@ -1,20 +1,17 @@
 package com.pb.starter.model;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 @Data
-@Builder
-@Slf4j
 public class CustomUserDetails implements UserDetails {
     private final String email;
     private final String password;
@@ -24,6 +21,8 @@ public class CustomUserDetails implements UserDetails {
     private final String tel;
     private String grantedAuth;
     private final String refreshToken;
+    private LocalDateTime regDt;
+    private LocalDateTime modDt;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -71,7 +70,6 @@ public class CustomUserDetails implements UserDetails {
         if(!StringUtils.hasText(roles)){ throw new IllegalArgumentException("### roles is empty"); }
         String[] roleArray = roles.split("#");
         if(roleArray.length < 2){
-            log.info("getRoles : {}",Collections.singleton(new SimpleGrantedAuthority(roleArray[0])).toString());
             return Collections.singleton(new SimpleGrantedAuthority(roleArray[0]));
         }else{
             Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
@@ -79,7 +77,6 @@ public class CustomUserDetails implements UserDetails {
                 if(!StringUtils.hasText(role)){ throw new IllegalArgumentException("### role is empty"); }
                 authorities.add(new SimpleGrantedAuthority(role));
             }
-            log.info("getRoles : {}",authorities);
             return authorities;
         }
     }

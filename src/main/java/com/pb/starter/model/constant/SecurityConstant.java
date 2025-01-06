@@ -9,6 +9,7 @@ public class SecurityConstant {
     @Getter
     public enum SecurityFreeURL {
         LOGIN_API("/api/v1/auth/login"),
+        LOGIN_API2("/api/v1/auth/login/**"),
         SIGNUP("/signUp"),
         LOGIN("/login"),
         LOGIN_FORM("/login/form"),
@@ -16,6 +17,8 @@ public class SecurityConstant {
         DIST("/dist/**"),
         FAVICON("/favicon.ico"),
         ERROR("/error"),
+        SWAGGER("/swagger-ui/**"),
+        SWAGGER_V3("/v3/**")
         ;
 
         private final String url;

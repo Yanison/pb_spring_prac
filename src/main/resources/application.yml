@@ -23,3 +23,14 @@ jwt:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+
+springdoc:
+  packages-to-scan: {
+            com.pb.starter.subject.restController
+  }
+  cache:
+    disabled: true
+  api-docs:
+    groups:
+      enabled: true
