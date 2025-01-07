@@ -10,6 +10,7 @@ public class SecurityConstant {
     public enum SecurityFreeURL {
         LOGIN_API("/api/v1/auth/login"),
         SIGNUP("/signUp"),
+        SIGNUP_FORM("/signUp/form"),
         LOGIN("/login"),
         LOGIN_FORM("/login/form"),
         ASSETS("/assets/**"),
