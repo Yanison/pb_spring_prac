@@ -110,10 +110,23 @@ public class SubjectRestController {
         );
     }
 
-    @DeleteMapping("/subject")
-    public ResponseEntity delete(@AuthenticationPrincipal CustomUserDetails user, @RequestBody SubjectEntity subjectEntity){
+    @DeleteMapping("/subject/id/{id}")
+    public ResponseEntity deleteById(@AuthenticationPrincipal CustomUserDetails user, @PathVariable(value = "id") String id){
+        SubjectService ss = ssc.getService(NOT_BASIC_STRATEGY);
+        int ret = ss.delete(id);
+        return ResponseEntity.ok(
+                CustomApiResponse.builder()
+                        .data(ret > 0)
+                        .status(HttpStatus.OK)
+                        .message(SUCCESS)
+                        .build()
+        );
+    }
+
+    @DeleteMapping("/subject/uuid/{uuid}")
+    public ResponseEntity deleteByUUid(@AuthenticationPrincipal CustomUserDetails user, @PathVariable(value = "uuid") String uuid){
         SubjectService ss = ssc.getService(BASIC_STRATEGY);
-        int ret = ss.update(subjectEntity);
+        int ret = ss.delete(uuid);
         return ResponseEntity.ok(
                 CustomApiResponse.builder()
                         .data(ret > 0)

@@ -9,7 +9,7 @@ import java.util.Optional;
 @Mapper
 public interface AuthMapper {
 
-    @Select("SELECT email,password FROM user WHERE email = #{email} AND password = #{password}")
+    @Select("SELECT * FROM user WHERE email = #{email} AND password = #{password}")
     Optional<UserEntity> findUserByEmailAndPassword(UserEntity lr);
 
     @Insert(""" 

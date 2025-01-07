@@ -3,15 +3,17 @@ package com.pb.starter.model;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class SubjectEntity {
     private Long id;
     private String title;
     private String content;
-    private Long userId;
+    private LocalDateTime regDt;
+    private LocalDateTime modDt;
     private String uuid;
-    private String regDt;
-    private String modDt;
+    private Long userId;
 
     @Builder
     public SubjectEntity(Long id, String title, String content, Long userId,String uuid) {

@@ -9,13 +9,14 @@ import java.util.Optional;
 @Mapper
 public interface SubjectMapper {
 
-    @Select("SELECT * FROM subject WHERE id = #{id}")
+    @Select("SELECT id, title, content, user_id AS userId, uuid, reg_dt AS regDt, mod_dt AS modDt FROM subject WHERE id = #{id}")
     Optional<SubjectEntity> findById(Long id);
 
-    @Select("SELECT * FROM subject WHERE uuid = #{uuid}")
+    @Select("SELECT id, title, content, user_id AS userId, uuid, reg_dt AS regDt, mod_dt AS modDt FROM subject WHERE uuid = #{uuid}")
     Optional<SubjectEntity> findByUUID(String uuid);
 
-    @Select("SELECT * FROM subject")
+
+    @Select("SELECT id, title, content, user_id AS userId, uuid, reg_dt AS regDt, mod_dt AS modDt FROM subject")
     List<SubjectEntity> findAll();
 
     @Insert("""
@@ -36,7 +37,10 @@ public interface SubjectMapper {
     int insert(SubjectEntity subject);
 
     @Delete("DELETE FROM subject WHERE id = #{id}")
-    int delete(Long id);
+    int deleteById(Long id);
+
+    @Delete("DELETE FROM subject WHERE uuid = #{uuid}")
+    int deleteByUuid(String id);
 
     @Update("""
         UPDATE subject

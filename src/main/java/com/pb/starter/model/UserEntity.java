@@ -3,6 +3,8 @@ package com.pb.starter.model;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class UserEntity {
     private Long id;
@@ -13,17 +15,18 @@ public class UserEntity {
     private String age;
     private String grantedAuth;
     private String tel;
-    private String regDt;
-    private String modDt;
+    private LocalDateTime regDt;
+    private LocalDateTime modDt;
 
     @Builder
-    public UserEntity(Long id, String email, String password, String name,int gender, String age, String tel, String regDt, String modDt,String grantedAuth) {
+    public UserEntity(Long id, String email, String password, String name,int gender, String age, String tel,String grantedAuth) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.age = age;
         this.tel = tel;
+        this.gender = gender;
         this.grantedAuth = grantedAuth;
     }
 }

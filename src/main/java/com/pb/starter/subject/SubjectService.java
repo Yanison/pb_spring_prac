@@ -9,6 +9,6 @@ public interface SubjectService {
     Optional<SubjectEntity> findById(String id);
     List<SubjectEntity> findAll();
     int insert(SubjectEntity subject);
-    int delete(Long id);
+    int delete(String id);
     int update(SubjectEntity subject);
 }

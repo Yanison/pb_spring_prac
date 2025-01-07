@@ -35,9 +35,10 @@ public class SubjectServiceImpl1 implements SubjectService{
     }
 
     @Override
-    public int delete(Long id) {
-        return subjectMapper.delete(id);
+    public int delete(String id) {
+        return subjectMapper.deleteByUuid(id);
     }
+
 
     @Override
     public int update(SubjectEntity subject) {
