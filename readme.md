@@ -1,0 +1,7 @@
+# Study
+
+## 브랜치 목록
+- master : 메인브렌치 ( readme 전용 )
+- starter-session-1.0.0-SNAPSHOT : 단순 로그인 구현
+- starter-session-1.0.1-SNAPSHOT : Spring Security6 JWT 토큰 인증인가 구현
+- starter-session-1.0.2-SNAPSHOT : Subject CRUD 구현
