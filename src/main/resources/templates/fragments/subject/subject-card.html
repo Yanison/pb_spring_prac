@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<th:block th:fragment="subject-card (item)">
-    <div class="col-md-4 single-note-item all-category note-important">
+<th:block th:fragment="subject-card(item)">
+    <div class="col-md-4 single-note-item all-category" th:classappend="'note-' + ${item?.category}">
         <div class="card card-body ">
             <span class="side-stick"></span>
-            <h5 class="note-title text-truncate w-75 mb-0" data-noteHeading="Go for lunch">Go for lunch <i class="point fas fa-circle ms-1 fs-1"></i></h5>
-            <p class="note-date fs-2 text-muted">01 April 2002</p>
+            <h5 class="note-title text-truncate w-75 mb-0" th:attrappend="data-noteHeading=${item?.title}">
+                <span th:text="${item?.id + '-' +item?.title}"></span>
+                <i class="point fas fa-circle ms-1 fs-1"></i>
+            </h5>
+            <p class="note-date fs-2 text-muted" th:text="${#temporals.format(item?.regDt,'yyyy년 MM월 dd일')}"></p>
             <div class="note-content">
-                <p class="note-inner-content text-muted" data-noteContent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.">Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis.</p>
+                <p class="note-inner-content text-muted" th:attrappend="data-noteContent=${item?.content}" th:text="${item?.content}"></p>
             </div>
             <div class="d-flex align-items-center">
                 <a href="javascript:void(0)" class="link me-1"><i class="far fa-star favourite-note"></i></a>
@@ -34,3 +36,20 @@
         </div>
     </div>
 </th:block>
+
+
+<!--/*
+
+카테고리는 note-${category}로 분류
+
+<i class="far fa-star favourite-note"></i> : 즐겨찾기 아이콘
+해당 아이콘을 클릭하면 subject의 faorite column이 1로 저장되어야 함.
+
+<i class="far fa-trash-alt remove-note"></i> : 삭제 아이콘
+해당 아이콘을 클릭하면 subject의 deleted column이 1로 저장되어야 함.
+
+<div class="dropdown-menu dropdown-menu-right category-menu">
+내부의 a 태그들은 각각의 카테고리를 나타냄 (Business, Social, Important)
+해당 카테고리를 클릭하면 subject의 category column이 해당 카테고리로 저장되어야 함.
+
+*/-->

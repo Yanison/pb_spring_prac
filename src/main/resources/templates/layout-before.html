@@ -3,7 +3,6 @@
 <head>
     <th:block th:replace="~{
     fragments/common/header ::
-
         header (
         'index',
         'index,home,main',
@@ -31,8 +30,8 @@
     <!-- sidebar -->
     <th:block th:replace="~{fragments/common/sidemenu :: sidemenu(${menulist})}"></th:block>
     <!-- page-wrapper -->
-    <div class="page-wrapper" th:with="fragment_replace=~{${fragPath} :: ${fragment}}">
-        <th:block th:replace="${fragment_replace}">
+    <div class="page-wrapper" th:with="frag=~{${fragPath} :: ${fragment}}">
+        <th:block th:replace="${frag}">
         </th:block>
     </div>
 </div>

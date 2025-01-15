@@ -23,6 +23,9 @@ jwt:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+  type-aliases-package: com.pb.starter.model
+  mapper-locations: classpath:mybatis/mapper/*.xml
+#  config-location: classpath:mybatis-config.xml
 
 
 springdoc:

@@ -64,6 +64,7 @@ class StarterApplicationTests {
 			subjectServiceImpl1.insert(subject);
 		}
 		List<SubjectEntity> list = subjectServiceImpl1.findAll();
+		System.out.println("### totalCnt : " + totalCnt + " list.size() : " + list.size());
 	}
 
 	boolean rareTrue(){

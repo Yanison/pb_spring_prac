@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pb.starter.subject.SubjectMapper">
+
+    <!-- Find by ID -->
+    <select id="findById" parameterType="long" resultType="SubjectEntity">
+        SELECT
+            *
+        FROM subject
+        WHERE id = #{id}
+    </select>
+
+    <!-- Find by UUID -->
+    <select id="findByUUID" parameterType="string" resultType="SubjectEntity">
+        SELECT
+            *
+        FROM subject
+        WHERE uuid = #{uuid}
+    </select>
+
+    <!-- Find All -->
+    <select id="findAll" resultType="SubjectEntity">
+        SELECT * FROM subject
+    </select>
+
+    <!-- Paged List -->
+    <select id="pagedList" resultType="SubjectEntity">
+        SELECT
+        *
+        FROM subject
+        WHERE 1=1
+        <if test="searchParam.title != null and searchParam.title != ''">
+            AND title LIKE CONCAT('%', #{searchParam.title}, '%')
+        </if>
+        <if test="searchParam.content != null and searchParam.content != ''">
+            AND content LIKE CONCAT('%', #{searchParam.content}, '%')
+        </if>
+        ORDER BY id
+        LIMIT #{pageable.pageSize} OFFSET #{pageable.offset}
+    </select>
+
+    <!-- Count All -->
+    <select id="countAll" resultType="int">
+        SELECT COUNT(*) FROM subject
+    </select>
+
+    <!-- Insert -->
+    <insert id="insert" parameterType="SubjectEntity">
+        INSERT INTO subject (
+            title, content, user_id, uuid,
+            category, favorite
+        ) VALUES (
+                     #{title}, #{content}, #{userId}, #{uuid},
+                     #{category}, #{favorite}
+                 )
+    </insert>
+
+    <!-- Delete by ID -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM subject WHERE id = #{id}
+    </delete>
+
+    <!-- Delete by UUID -->
+    <delete id="deleteByUuid" parameterType="string">
+        DELETE FROM subject WHERE uuid = #{uuid}
+    </delete>
+
+    <!-- Update -->
+    <update id="update" parameterType="SubjectEntity">
+        UPDATE subject
+        SET
+            title = #{title},
+            content = #{content},
+            category = #{category},
+            favorite = #{favorite},
+            deleted = #{deleted}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

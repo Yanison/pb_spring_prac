@@ -2,5 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <th:block th:fragment="ui-pagination">
+    <div class="card-body" style="display: flex;justify-content: center">
+        <nav aria-label="Page navigation">
+            <form action="/subject/main" method="get">
+                <ul class="pagination">
+                    <!-- 이전 페이지 버튼 -->
+                    <li class="page-item" th:classappend="${pageNumber == 1} ? 'disabled'">
+                        <a class="page-link" th:href="@{/subject/main(page=${(pageNumber - 1) < 1 ? 1 : (pageNumber - 1)})}">Previous</a>
+                    </li>
 
+                    <!-- 페이지 번호 버튼 -->
+                    <li class="page-item"
+                        th:each="i : ${#numbers.sequence(0, pageSize - 1)}"
+                        th:classappend="${i == (pageNumber - 1)} ? 'active'">
+                        <a class="page-link" th:href="@{/subject/main(page=${i+1})}" th:text="${i + 1}"></a>
+                    </li>
+
+                    <!-- 다음 페이지 버튼 -->
+                    <li class="page-item" th:classappend="${pageNumber == pageSize} ? 'disabled'">
+                        <a class="page-link" th:href="@{/subject/main(page=${(pageNumber + 1) > pageSize ? pageSize : (pageNumber + 1)})}">Next</a>
+                    </li>
+                </ul>
+            </form>
+        </nav>
+    </div>
 </th:block>

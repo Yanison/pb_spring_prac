@@ -6,9 +6,7 @@
 - Java Servlet 기반의 웹 개발을 단순화하기 위해 등장
 - HTML 내부에 Java 코드와 JSTL(JSP Standard Tag Library)을 사용하여 동적인 뷰를 구성 가능함
 - JSP의 단점
-    - HTML과 Java 코드가 섞여 있어 가독성이 떨어짐
-    - JSP 파일을 수정하면 서버를 재시작해야 함
-    - JSP 파일을 컴파일하여 Servlet으로 변환하기 때문에 느림
+    - HTML과 Java 코드가 섞여 있어 가독성이 떨어짐 즉 유지보수가 어려워짐 ( 예전엔 JSP에 비즈니스 로직이 섞여있는 경우가 많았음 그러나 요즘은 JSTL만 사용함)
 ### Vekocity - 2001년 출시
 - JSP의 복잡성을 보완하기 위해 등장, MVC 패턴에서 뷰 역할에 집중하기 위해 설계됨
 - 간단한 문법과 유연성을 제공하지만 복잡한 요구사항에는 한계가 존재했음
@@ -18,17 +16,42 @@
 - 다양한 기능을 지원하지만 무겁다는 단점이 있다.
 
 ### Thymeleaf - 2011년 출시
+- Java 진영에서 HTML 파일의 가독성과 유지보수를 개선하기 위해 개발 "자연스러운 HTML(Natural Templetes)"이라는 개념 도입
+- Spirg Boot에서 강력한 통합 지원(Spring EL 사용)으로 인해 많은 사용자층을 확보하고 있음 (Spring에서 공식적으로 권장하는 템플릿 엔진)
+- HTML 파일을 그대로 사용하면서도 동적인 데이터를 쉽게 삽입할 수 있음 (JSP는 html 파일을 `/jsp`로 변경해야함)
+- 가독성이 높은 코드로 디자이너와 개발자가 동일한 템플릿에서 작업 가능
 
+그러나 Spring 진영에서 공식적으로 지원해준다는 장점 외에는 느리다는 장점이 있다..
 
+### 성능비교
+Java-Templete 성능비교
+- [국내 블로그글](https://jangcool.tistory.com/entry/Java-Template-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90)
+- [Modern Type-Safe Template Engines (Part 2)](https://dzone.com/articles/modern-type-safe-template-engines-part-2)
+- [Java: Benchmark Thymeleaf 2.1.4 vs Thymeleaf 3.0 SNAPSHOT](https://smarterco.de/java-benchmark-thymeleaf-2.1.4-vs-thymeleaf-3.0-snapshot/)
 
-### 번외 - 성능비교
-[Java-Templete 성능비교]
-- https://jangcool.tistory.com/entry/Java-Template-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90
+**요약 : Freemarker > Velocity > JSP > Thymeleaf**
+
+---
 
 ## Thyemleaf란?
 
+```text
+공식 문서 소개
+
+Thymeleaf는 웹 및 독립 실행형 환경에서 모두 사용할 수 있는 현대적인 서버사이드 Java 템플릿 엔진으로, 
+HTML, XML, JavaScript, CSS, 심지어 일반 텍스트까지 처리할 수 있습니다.
+
+Thymeleaf의 주요 목표는 우아하고 유지보수 가능한 방식으로 템플릿을 생성하는 것입니다. 
+이를 위해, 템플릿 파일에 로직을 주입하면서도 디자인 프로토타입으로 사용할 수 있도록 하는 
+Natural Templates(자연스러운 템플릿) 개념을 기반으로 설계되었습니다. 
+이로 인해 디자인과 개발 팀 간의 의사소통이 개선되고, 양측 간의 격차가 줄어듭니다.
+
+또한, Thymeleaf는 처음부터 **웹 표준(특히 HTML5)**을 염두에 두고 설계되었으며, 
+필요에 따라 완전히 유효한 템플릿을 생성할 수 있는 기능을 제공합니다.
+```
+
 Thymeleaf는 Java기반 템플릿 엔진입니다. MVC 기반 웹 애플리케이션의 뷰 레이어에서 XHTML/HTML5를 제공하는데 적합합니다.
-JSP와 달리 브라우저에서 바로 확인 가능한 자연스러운 HTML을 제공하며, JSP와 같은 뷰 템플릿 엔진에 비해 더 빠르고 유지보수가 쉽다는 장점이 있습니다.
+JSP와 달리 브라우저에서 바로 확인 가능한 자연스러운 HTML을 제공하며, JSP와 같은 뷰 템플릿 엔진에 유지보수가 쉽다는 장점이 있습니다.
 
 
 ```html
@@ -162,8 +185,22 @@ public class IndexController {
     <div>fragment</div>
     <div th:text="${fragment}"></div> <!-- <div>index</div> -->
 </body>
-
 ```
+
+위 처럼 서버에서 전달받은 값을 element에 입력할때는 `th:text`를 사용하지만 class나 id등 다른 속성에도 사용가능합니다.
+```html
+<!-- id 속성-->
+<div th:id="${fragment}"></div> <!-- <div id="value"></div> -->
+<!-- class 속성-->
+<div th:class="${fragment}"></div> <!-- <div class="value"></div> -->
+<div class="container" th:classappend="${fragment}"></div> <!-- <div class="container value"></div> -->
+<!-- attr -->
+<div th:attr="data-id=${fragment}"></div> <!-- <div data-id="value"></div> -->
+<div th:attrappend="data-id=${fragment}"></div> <!-- <div data-id="value"></div> -->
+```
+<div 
+```
+
 ---
 ### 2. 반복문에 따라 렌더링할때
 서버에서 배열 데이터를 받았을때 배열의 길이만큼 동적으로 렌더링 하고 싶을때 다음과 같이 사용합니다.
