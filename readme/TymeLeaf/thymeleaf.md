@@ -23,6 +23,7 @@
 
 ### 번외 - 성능비교
 [Java-Templete 성능비교]
+- https://jangcool.tistory.com/entry/Java-Template-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90
 
 ## Thyemleaf란?
 
@@ -38,6 +39,7 @@ JSP와 달리 브라우저에서 바로 확인 가능한 자연스러운 HTML을
 ```
 
 본문은 Thymeleaf를 빠르게 슥듭하기위한 요약본이니 자세한 내용은 [Thymeleaf 공식문서] 를 참고하세요.
+- https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#expression-basic-objects
 
 ## 목차
 0. 기본 사용법
