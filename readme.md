@@ -5,3 +5,4 @@
 - starter-session-1.0.0-SNAPSHOT : 단순 로그인 구현
 - starter-session-1.0.1-SNAPSHOT : Spring Security6 JWT 토큰 인증인가 구현
 - starter-session-1.0.2-SNAPSHOT : Subject CRUD 구현
+- starter-session-1.0.3-SNAPSHOT : Subject 페이징 처리 및, Thymeleaf 뷰 구성 향상
