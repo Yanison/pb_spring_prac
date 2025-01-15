@@ -1,7 +1,9 @@
 package com.pb.starter.subject;
 
 import com.pb.starter.model.SubjectEntity;
+import com.pb.starter.model.SubjectSearchParam;
 import org.apache.ibatis.annotations.*;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +20,20 @@ public interface SubjectMapper {
 
     @Select("SELECT id, title, content, user_id AS userId, uuid, reg_dt AS regDt, mod_dt AS modDt FROM subject")
     List<SubjectEntity> findAll();
+
+    @Select("""
+        SELECT id, title, content, user_id AS userId, uuid, reg_dt AS regDt, mod_dt AS modDt
+                FROM subject
+                WHERE 1=1 
+                and title LIKE CONCAT('%', #{searchParam.title}, '%')
+                and content LIKE CONCAT('%', #{searchParam.content}, '%')
+                ORDER BY id
+                LIMIT #{pageable.pageSize} OFFSET #{pageable.offset}
+    """)
+    List<SubjectEntity> pagedList(@Param("searchParam") SubjectSearchParam searchParam, @Param("pageable") Pageable pageable);
+
+    @Select("SELECT COUNT(*) FROM subject")
+    int countAll();
 
     @Insert("""
         INSERT INTO subject

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,23 +14,23 @@
     <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="../assets/libs/quill/dist/quill.snow.css">
-	<!-- Custom CSS -->
-	<link href="../../dist/css/style.min.css" rel="stylesheet">
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/extra-libs/prism/prism.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 
 <body>
-	<!-- -------------------------------------------------------------- -->
-	<!-- Preloader - style you can find in spinners.css -->
-	<!-- -------------------------------------------------------------- -->
-	<div class="preloader">
+    <!-- -------------------------------------------------------------- -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- -------------------------------------------------------------- -->
+    <div class="preloader">
         <svg class="tea lds-ripple" width="37" height="48" viewbox="0 0 37 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z" stroke="#1e88e5" stroke-width="2"></path>
           <path d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34" stroke="#1e88e5" stroke-width="2"></path>
@@ -39,14 +39,14 @@
           <path id="steamR" d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13" stroke="#1e88e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
     </div>
-	<!-- -------------------------------------------------------------- -->
-	<!-- Main wrapper - style you can find in pages.scss -->
-	<!-- -------------------------------------------------------------- -->
-	<div id="main-wrapper">
-		<!-- -------------------------------------------------------------- -->
-		<!-- Topbar header - style you can find in pages.scss -->
-		<!-- -------------------------------------------------------------- -->
-		<header class="topbar">
+    <!-- -------------------------------------------------------------- -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- -------------------------------------------------------------- -->
+    <div id="main-wrapper">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- -------------------------------------------------------------- -->
+        <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -409,8 +409,8 @@
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
                                     <div class=""><img src="../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="60"></div>
                                     <div class="ms-2">
-                                        <h4 class="mb-0 text-white" ><span th:text="${user.email}">User</span></h4>
-                                        <p class=" mb-0" ><span th:text="${user.email}">User</span></p>
+                                        <h4 class="mb-0 text-white">Steave Jobs</h4>
+                                        <p class=" mb-0">varun@gmail.com</p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item" href="#"><i data-feather="user" class="feather-sm text-info me-1 ms-1"></i> My
@@ -458,7 +458,7 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- User profile -->
-                <div class="user-profile position-relative" style="background: url(/assets/images/background/user-info.jpg) no-repeat;">
+                <div class="user-profile position-relative" style="background: url(../assets/images/background/user-info.jpg) no-repeat;">
                     <!-- User profile image -->
                     <div class="profile-img"> <img src="../assets/images/users/profile.png" alt="user" class="w-100" /> </div>
                     <!-- User profile text-->
@@ -1263,26 +1263,535 @@
             </div>
             <!-- End Bottom points-->
         </aside>
-		<!-- -------------------------------------------------------------- -->
-		<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-		<!-- -------------------------------------------------------------- -->
-		<!-- -------------------------------------------------------------- -->
-		<!-- Page wrapper  -->
-		<!-- -------------------------------------------------------------- -->
-		<div class="page-wrapper">
-
-		</div>
-		<!-- -------------------------------------------------------------- -->
-		<!-- End Page wrapper  -->
-		<!-- -------------------------------------------------------------- -->
-	</div>
-	<!-- -------------------------------------------------------------- -->
-	<!-- End Wrapper -->
-	<!-- -------------------------------------------------------------- -->
-	<!-- -------------------------------------------------------------- -->
-	<!-- customizer Panel -->
-	<!-- -------------------------------------------------------------- -->
-	<aside class="customizer">
+        <!-- -------------------------------------------------------------- -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- Page wrapper  -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 col-12 align-self-center">
+                    <h3 class="text-themecolor mb-0">Pagination</h3>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Pagination</li>
+                    </ol>
+                </div>
+                <div class="col-md-7 col-12 align-self-center d-none d-md-block">
+                    <div class="d-flex mt-2 justify-content-end">
+                        <div class="d-flex me-3 ms-2">
+                            <div class="chart-text me-2">
+                                <h6 class="mb-0"><small>THIS MONTH</small></h6>
+                                <h4 class="mt-0 text-info">$58,356</h4>
+                            </div>
+                            <div class="spark-chart">
+                                <div id="monthchart"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex ms-2">
+                            <div class="chart-text me-2">
+                                <h6 class="mb-0"><small>LAST MONTH</small></h6>
+                                <h4 class="mt-0 text-primary">$48,356</h4>
+                            </div>
+                            <div class="spark-chart">
+                                <div id="lastmonthchart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- -------------------------------------------------------------- -->
+            <!-- Container fluid  -->
+            <!-- -------------------------------------------------------------- -->
+            <div class="container-fluid">
+                <!-- -------------------------------------------------------------- -->
+                <!-- Start Page Content -->
+                <!-- -------------------------------------------------------------- -->
+                <div class="row">
+                    <!-- ------------------------------------------------ -->
+                    <!-- 1. Default Pagination -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Default Pagination</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code1-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code1-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Default Pagination - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                            &lt;nav aria-label=&quot;Page navigation example&quot;&gt;
+                                                              &lt;ul class=&quot;pagination&quot;&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 2. Pagination with Icon -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                                <div class="d-flex border-bottom title-part-padding align-items-center">
+                                    <div>
+                                        <h4 class="card-title mb-0">Pagination with Icon</h4>
+                                    </div>
+                                    <div class="ms-auto flex-shrink-0">
+                                        <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                        data-bs-target="#view-code2-modal">
+                                            <i data-feather="code" class="feather-sm fill-white"></i>
+                                        </button>
+                                        <!-- Code Modal -->
+                                        <div id="view-code2-modal" class="modal fade" tabindex="-1"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header border-bottom">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Pagination with Icon - View Code</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body p-4">
+                                                        <pre class="language-html scrollable">
+                                                            <code>
+                                                                &lt;nav aria-label=&quot;Page navigation example&quot;&gt;
+                                                              &lt;ul class=&quot;pagination&quot;&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;
+                                                                  &lt;a class=&quot;page-link link&quot; href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt;
+                                                                    &lt;span aria-hidden=&quot;true&quot;&gt;
+                                                                        &lt;i data-feather=&quot;chevrons-left&quot; class=&quot;feather-sm&quot;&gt;&lt;/i&gt;
+                                                                    &lt;/span&gt;
+                                                                  &lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;
+                                                                  &lt;a class=&quot;page-link link&quot; href=&quot;#&quot; aria-label=&quot;Next&quot;&gt;
+                                                                    &lt;span aria-hidden=&quot;true&quot;&gt;
+                                                                        &lt;i data-feather=&quot;chevrons-right&quot; class=&quot;feather-sm&quot;&gt;&lt;/i&gt;
+                                                                    &lt;/span&gt;
+                                                                  &lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+                                    </div>
+                                </div>
+                            <div class="card-body">
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination">
+                                    <li class="page-item">
+                                      <a class="page-link link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <i data-feather="chevrons-left" class="feather-sm"></i>
+                                        </span>
+                                      </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link link" href="#">3</a></li>
+                                    <li class="page-item">
+                                      <a class="page-link link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <i data-feather="chevrons-right" class="feather-sm"></i>
+                                        </span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 3. Pagination with Active and Disabled States -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Pagination with Active and Disabled States</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code3-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code3-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Pagination with Active and Disabled States - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                           &lt;nav aria-label=&quot;...&quot;&gt;
+                                                              &lt;ul class=&quot;pagination&quot;&gt;
+                                                                &lt;li class=&quot;page-item disabled&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot; tabindex=&quot;-1&quot; aria-disabled=&quot;true&quot;&gt;Previous&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item active&quot; aria-current=&quot;page&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Next&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <nav aria-label="...">
+                                  <ul class="pagination">
+                                    <li class="page-item disabled">
+                                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                      <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                      <a class="page-link" href="#">Next</a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 4. Large Pagination -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Large Pagination</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code4-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code4-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Large Pagination - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                           &lt;nav aria-label=&quot;...&quot;&gt;
+                                                              &lt;ul class=&quot;pagination pagination-lg&quot;&gt;
+                                                                &lt;li class=&quot;page-item active&quot; aria-current=&quot;page&quot;&gt;
+                                                                  &lt;span class=&quot;page-link&quot;&gt;1&lt;/span&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-subtitle lh-base mb-3">Fancy larger or smaller pagination? Add <mark><code>.pagination-lg</code></mark> or <mark><code>.pagination-sm</code></mark> for additional sizes.</h6>
+                                <nav aria-label="...">
+                                  <ul class="pagination pagination-lg">
+                                    <li class="page-item active" aria-current="page">
+                                      <span class="page-link">1</span>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 5. Small Pagination -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Small Pagination</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code5-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code5-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Small Pagination - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                           &lt;nav aria-label=&quot;...&quot;&gt;
+                                                              &lt;ul class=&quot;pagination pagination-sm&quot;&gt;
+                                                                &lt;li class=&quot;page-item active&quot; aria-current=&quot;page&quot;&gt;
+                                                                  &lt;span class=&quot;page-link&quot;&gt;1&lt;/span&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-subtitle lh-base mb-3">Fancy larger or smaller pagination? Add <mark><code>.pagination-lg</code></mark> or <mark><code>.pagination-sm</code></mark> for additional sizes.</h6>
+                                <nav aria-label="...">
+                                  <ul class="pagination pagination-sm">
+                                    <li class="page-item active" aria-current="page">
+                                      <span class="page-link">1</span>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 6. Center Alignment Pagination -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Center Alignment Pagination</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code6-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code6-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Center Alignment Pagination - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                           &lt;nav aria-label=&quot;Page navigation example&quot;&gt;
+                                                              &lt;ul class=&quot;pagination justify-content-center&quot;&gt;
+                                                                &lt;li class=&quot;page-item disabled&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot; tabindex=&quot;-1&quot; aria-disabled=&quot;true&quot;&gt;Previous&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Next&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-subtitle lh-base mb-3">Change the alignment of pagination components with flexbox utilities.</h6>
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                      <a class="page-link" href="#">Next</a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------ -->
+                    <!-- 6. Right Alignment Pagination -->
+                    <!-- ------------------------------------------------ -->
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="d-flex border-bottom title-part-padding align-items-center">
+                                <div>
+                                    <h4 class="card-title mb-0">Right Alignment Pagination</h4>
+                                </div>
+                                <div class="ms-auto flex-shrink-0">
+                                    <button class="btn btn-light-primary text-primary  rounded-pill text-decoration-none btn-sm" title="View Code"  data-bs-toggle="modal"
+                                    data-bs-target="#view-code6-modal">
+                                        <i data-feather="code" class="feather-sm fill-white"></i>
+                                    </button>
+                                    <!-- Code Modal -->
+                                    <div id="view-code6-modal" class="modal fade" tabindex="-1"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-bottom">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Right Alignment Pagination - View Code</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body p-4">
+                                                    <pre class="language-html scrollable">
+                                                        <code>
+                                                           &lt;nav aria-label=&quot;Page navigation example&quot;&gt;
+                                                              &lt;ul class=&quot;pagination justify-content-end&quot;&gt;
+                                                                &lt;li class=&quot;page-item disabled&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot; tabindex=&quot;-1&quot; aria-disabled=&quot;true&quot;&gt;Previous&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;page-item&quot;&gt;
+                                                                  &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Next&lt;/a&gt;
+                                                                &lt;/li&gt;
+                                                              &lt;/ul&gt;
+                                                            &lt;/nav&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-subtitle lh-base mb-3">Change the alignment of pagination components with flexbox utilities.</h6>
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination justify-content-end">
+                                    <li class="page-item disabled">
+                                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                      <a class="page-link" href="#">Next</a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- -------------------------------------------------------------- -->
+                <!-- End PAge Content -->
+                <!-- -------------------------------------------------------------- -->
+            </div>
+            <!-- -------------------------------------------------------------- -->
+            <!-- End Container fluid  -->
+            <!-- -------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------- -->
+            <!-- footer -->
+            <!-- -------------------------------------------------------------- -->
+            <footer class="footer text-center">
+                   All Rights Reserved by Materialpro admin.
+            </footer>
+            <!-- -------------------------------------------------------------- -->
+            <!-- End footer -->
+            <!-- -------------------------------------------------------------- -->
+        </div>
+        <!-- -------------------------------------------------------------- -->
+        <!-- End Page wrapper  -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- End Wrapper -->
+    <!-- -------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------- -->
+    <!-- customizer Panel -->
+    <!-- -------------------------------------------------------------- -->
+    <aside class="customizer">
         <a href="javascript:void(0)" class="service-panel-toggle"><i class="fa fa-spin fa-cog"></i></a>
         <div class="customizer-body">
             <ul class="nav customizer-tab" role="tablist">
@@ -1598,30 +2107,29 @@
             </div>
         </div>
     </aside>
-	<div class="chat-windows"></div>
-	<!-- -------------------------------------------------------------- -->
-	<!-- All Jquery -->
-	<!-- -------------------------------------------------------------- -->
-	<script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap tether Core JavaScript -->
-	<!-- <script src="../assets/libs/popper.js/popper.min.js"></script> -->
+    <div class="chat-windows"></div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- All Jquery -->
+    <!-- -------------------------------------------------------------- -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- apps -->
-	<script src="../../dist/js/app.min.js"></script>
-	<script src="../../dist/js/app.init.dark.js"></script>
-	<script src="../../dist/js/app-style-switcher.js"></script>
-	<!-- slimscrollbar scrollbar JavaScript -->
-	<script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-	<script src="../assets/extra-libs/sparkline/sparkline.js"></script>
-	<!--Wave Effects -->
-	<script src="../../dist/js/waves.js"></script>
-	<!--Menu sidebar -->
-	<script src="../../dist/js/sidebarmenu.js"></script>
-	<!--Custom JavaScript -->
-	<script src="../../dist/js/feather.min.js"></script>
-	<script src="../../dist/js/custom.min.js"></script>
-	<!--This page JavaScript -->
-	<script src="../../dist/js/pages/notes/notes.js"></script>
+    <!-- apps -->
+    <script src="../../dist/js/app.min.js"></script>
+    <script src="../../dist/js/app.init.dark.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+   <script src="../../dist/js/feather.min.js"></script>
+    <script src="../../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../assets/extra-libs/prism/prism.js"></script>
 </body>
 
 </html>

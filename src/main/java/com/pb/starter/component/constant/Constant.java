@@ -1,4 +1,4 @@
-package com.pb.starter.model.constant;
+package com.pb.starter.component.constant;
 
 public class Constant {
     public final static int GENDER_M = 1;

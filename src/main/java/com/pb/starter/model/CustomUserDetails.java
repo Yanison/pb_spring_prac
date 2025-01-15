@@ -1,5 +1,6 @@
 package com.pb.starter.model;
 
+import jakarta.validation.constraints.Min;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +18,7 @@ public class CustomUserDetails implements UserDetails {
     private final String password;
     private final String name;
     private final String gender;
-    private final int age;
+    private final Integer age;
     private final String tel;
     private String grantedAuth;
     private final String refreshToken;

@@ -1,4 +1,4 @@
-package com.pb.starter.component.util;
+package com.pb.starter.component;
 
 import java.util.UUID;
 

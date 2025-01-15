@@ -1,5 +1,6 @@
 package com.pb.starter.auth;
 
+import com.pb.starter.component.GlobalAdvice;
 import com.pb.starter.component.exception.UserDuplicationException;
 import com.pb.starter.model.UserEntity;
 import com.pb.starter.model.api.SignUpRequest;
@@ -15,15 +16,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AuthController {
 
+    private final GlobalAdvice globalAdvice;
     private final AuthService authService;
 
     @GetMapping("/login/form")
     public String formLogin() {
-        return "/login/authentication-form-login1";
+        return "auth/login/authentication-form-login1";
     }
     @GetMapping("/login")
     public String login() {
-        return "/login/authentication-login1";
+        return "auth/login/authentication-login1";
     }
 
     @PostMapping("/login")
@@ -39,7 +41,7 @@ public class AuthController {
 
     @GetMapping("/signUp/form")
     public String signUp() {
-        return "/login/authentication-register1";
+        return "auth/register/authentication-register1";
     }
 
     @PostMapping("/signUp")

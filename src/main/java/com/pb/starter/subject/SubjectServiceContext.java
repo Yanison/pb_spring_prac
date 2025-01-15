@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import static com.pb.starter.model.constant.Constant.*;
+import static com.pb.starter.component.constant.Constant.*;
 
 @Component
 @RequiredArgsConstructor

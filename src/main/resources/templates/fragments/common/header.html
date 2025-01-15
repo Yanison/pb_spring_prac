@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="header (title,keywords,description)" >
+    <th:block th:replace="~{fragments/common/meta :: meta (description=${description})}"></th:block>
+    <title th:text="${title == '' ? 'please insert title' : title }"></title>
+    <th:block th:replace="~{fragments/common/resources :: resources}"></th:block>
+</th:block>

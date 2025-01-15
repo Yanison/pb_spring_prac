@@ -2,11 +2,14 @@ package com.pb.starter.subject.restController;
 
 import com.pb.starter.model.CustomUserDetails;
 import com.pb.starter.model.SubjectEntity;
+import com.pb.starter.model.SubjectSearchParam;
 import com.pb.starter.model.api.CustomApiResponse;
 import com.pb.starter.subject.SubjectService;
 import com.pb.starter.subject.SubjectServiceContext;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-import static com.pb.starter.model.constant.Constant.*;
+import static com.pb.starter.component.constant.Constant.*;
 
 @Tag(
         name = "게시글 CRUD",
@@ -30,10 +33,23 @@ public class SubjectRestController {
 
     private final SubjectServiceContext ssc;
 
+//    @GetMapping("/subjects")
+//    public ResponseEntity getSubjectList(@AuthenticationPrincipal CustomUserDetails user) {
+//        SubjectService ss = ssc.getService(BASIC_STRATEGY);
+//        List<SubjectEntity> list = ss.findAll();
+//        return ResponseEntity.ok(
+//                CustomApiResponse.builder()
+//                        .data(list)
+//                        .status(HttpStatus.OK)
+//                        .message(SUCCESS)
+//                        .build()
+//        );
+//    }
+
     @GetMapping("/subjects")
-    public ResponseEntity getSubjectList(@AuthenticationPrincipal CustomUserDetails user) {
+    public ResponseEntity getSubjectListPaged(@AuthenticationPrincipal CustomUserDetails user,@PageableDefault(value = 10) Pageable page,@RequestBody SubjectSearchParam searchParam) {
         SubjectService ss = ssc.getService(BASIC_STRATEGY);
-        List<SubjectEntity> list = ss.findAll();
+        List<SubjectEntity> list = ss.pagedList(searchParam,page).getContent();
         return ResponseEntity.ok(
                 CustomApiResponse.builder()
                         .data(list)

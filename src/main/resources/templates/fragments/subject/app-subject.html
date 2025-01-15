@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="app-note">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <th:block th:replace="~{fragments/common/page-titles :: page-titles}"></th:block>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- -------------------------------------------------------------- -->
+    <!-- Container fluid  -->
+    <!-- -------------------------------------------------------------- -->
+    <div class="container-fluid note-has-grid">
+        <!-- tab -->
+        <th:block th:replace="~{fragments/subject/subject-tab :: subject-tab}"></th:block>
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <th:block th:replace="~{fragments/subject/subjects-div :: subject-div(subjectList=${subjectList})}"></th:block>
+        <!-- -------------------------------------------------------------- -->
+        <!-- Modal Add notes -->
+        <th:block th:replace="~{fragments/subject/subject-add-modal :: subject-add-modal}"></th:block>
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- footer -->
+    <!-- -------------------------------------------------------------- -->
+    <th:block th:replace="~{fragments/common/footer :: footer}"></th:block>
+    <!-- -------------------------------------------------------------- -->
+    <!-- End footer -->
+    <!-- -------------------------------------------------------------- -->
+</th:block>

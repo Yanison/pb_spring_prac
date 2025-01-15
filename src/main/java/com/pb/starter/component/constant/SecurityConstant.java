@@ -1,4 +1,4 @@
-package com.pb.starter.model.constant;
+package com.pb.starter.component.constant;
 
 import lombok.Getter;
 
@@ -18,7 +18,7 @@ public class SecurityConstant {
         FAVICON("/favicon.ico"),
         ERROR("/error"),
         SWAGGER("/swagger-ui/**"),
-        SWAGGER_V3("/v3/**")
+        SWAGGER_V3("/v3/**"),
         ;
 
         private final String url;

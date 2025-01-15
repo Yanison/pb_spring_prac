@@ -1,14 +1,18 @@
 package com.pb.starter.subject;
 
 import com.pb.starter.model.SubjectEntity;
+import com.pb.starter.model.SubjectSearchParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-import static com.pb.starter.component.util.CommonUtil.uuidGenerator;
+import static com.pb.starter.component.CommonUtil.uuidGenerator;
 
 @Slf4j
 @Service
@@ -43,5 +47,12 @@ public class SubjectServiceImpl1 implements SubjectService{
     @Override
     public int update(SubjectEntity subject) {
         return subjectMapper.update(subject);
+    }
+
+    @Override
+    public Page<SubjectEntity> pagedList(SubjectSearchParam searchParam,Pageable pageable) {
+        List<SubjectEntity> pagedList = subjectMapper.pagedList(searchParam,pageable);
+        int totalCount = subjectMapper.countAll();
+        return new PageImpl<>(pagedList, pageable, totalCount);
     }
 }
