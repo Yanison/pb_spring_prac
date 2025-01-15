@@ -1,11 +1,33 @@
 # Thymeleaf 단기속성 문법
 
+## Java 진영 템플릿 엔진의 역사
 
+### JSP(Java Server Pages) - 1999년 출시
+- Java Servlet 기반의 웹 개발을 단순화하기 위해 등장
+- HTML 내부에 Java 코드와 JSTL(JSP Standard Tag Library)을 사용하여 동적인 뷰를 구성 가능함
+- JSP의 단점
+    - HTML과 Java 코드가 섞여 있어 가독성이 떨어짐
+    - JSP 파일을 수정하면 서버를 재시작해야 함
+    - JSP 파일을 컴파일하여 Servlet으로 변환하기 때문에 느림
+### Vekocity - 2001년 출시
+- JSP의 복잡성을 보완하기 위해 등장, MVC 패턴에서 뷰 역할에 집중하기 위해 설계됨
+- 간단한 문법과 유연성을 제공하지만 복잡한 요구사항에는 한계가 존재했음
+- HTML 템플릿이 정적 파일로서 가독성이 부족
+### Apache FreeMarker - 2002년 출시
+- Velocity의 단점을 보완하기 위해 등장, JSP 대안으로 많은 사용자층을 확보했었음
+- 다양한 기능을 지원하지만 무겁다는 단점이 있다.
+
+### Thymeleaf - 2011년 출시
+
+
+
+### 번외 - 성능비교
+[Java-Templete 성능비교]
 
 ## Thyemleaf란?
 
 Thymeleaf는 Java기반 템플릿 엔진입니다. MVC 기반 웹 애플리케이션의 뷰 레이어에서 XHTML/HTML5를 제공하는데 적합합니다.
-JSP와 달리 브라우저에서 바로 확인 가능한 자연스러운 HTML을 제공하며, 
+JSP와 달리 브라우저에서 바로 확인 가능한 자연스러운 HTML을 제공하며, JSP와 같은 뷰 템플릿 엔진에 비해 더 빠르고 유지보수가 쉽다는 장점이 있습니다.
 
 
 ```html
@@ -335,3 +357,4 @@ I am a peace of fragment for replace
 
 
 [Thymeleaf 공식문서]:(https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#expression-basic-objects)
+[Java-Templete 성능비교]:(https://jangcool.tistory.com/entry/Java-Template-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90)
